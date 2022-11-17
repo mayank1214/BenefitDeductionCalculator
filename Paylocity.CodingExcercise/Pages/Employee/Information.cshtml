@@ -1,0 +1,67 @@
+﻿@page
+@model Paylocity.CodingExcercise.Web.Pages.Employee.InformationModel
+@{
+    ViewData["Title"] = "Employee Information";
+}
+
+<div class="text-center">
+    <h1>Employee Information</h1>
+    <p>Enter the employee's information below for employee benefit calculation</p>
+</div>
+<div>
+    <form method="post">
+        <div class="row row-margin">
+            <div class="col-2">
+                <label asp-for="EmployeeViewModel.Name">Name</label>
+            </div>
+            <div class="col-2">
+                <input asp-for="EmployeeViewModel.Name" class="form-control" required />
+            </div>
+        </div>
+          <div class="row row-margin">
+            <div class="col-2">
+               <label asp-for="EmployeeViewModel.Salary">Yearly Salary</label>
+            </div>
+            <div class="col-2">
+                 <input asp-for="EmployeeViewModel.Salary" class="form-control" />
+            </div>
+        </div>
+          <div class="row row-margin">
+            <div class="col-2">
+                <label asp-for="EmployeeViewModel.NumberOfPayChecksPerYear">Paycheck Per Year</label>
+            </div>
+            <div class="col-2">
+                 <input asp-for="EmployeeViewModel.NumberOfPayChecksPerYear" class="form-control" />
+            </div>
+        </div>
+        @if (Model.EmployeeViewModel.Dependents.Count > 0)
+        {
+            <h4>Dependents</h4>
+            for (int i = 0; i < Model.EmployeeViewModel.Dependents.Count; i++)
+            {
+                <div class="row row-margin">
+                    <div class="col-2">
+                        <label asp-for="EmployeeViewModel.Dependents[i].Name">Name</label>
+                    </div>
+                     <div class="col-2">
+                        <input asp-for="EmployeeViewModel.Dependents[i].Name" class="form-control" required />
+                    </div>
+                     <div class="col-2">
+                        <label asp-for="EmployeeViewModel.Dependents[i].DependentType">Type</label>
+                    </div>
+                     <div class="col-2">
+                        <select asp-for="EmployeeViewModel.Dependents[i].DependentType" asp-items="Model.DependentTypes" class="form-control"></select>
+                    </div>
+                </div>
+            }
+        }
+        <hr />
+        <div class="row row-margin">
+            <div class="form-group col-md-12 text-center">
+                <button type="submit" class="btn btn-primary btn-lg">Calculate Deductions</button>
+            </div>
+        </div>
+    </form>
+</div>
+
+

@@ -1,0 +1,43 @@
+﻿@page
+@model Paylocity.CodingExcercise.Web.Pages.Employee.ResultModel
+@{
+    ViewData["Title"] = "Benefit Deduction Calculation Result";
+}
+
+<div class="text-center">
+    <h1>Benefit Deduction Calculation Result</h1>
+    <hr />
+</div>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th></th>
+            <th>Deduction Per Paycheck</th>
+            <th>Deduction Per Year</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Employee</td>
+            <td>@Html.DisplayFor(m => m.DeductionCalcuationResult.EmployeeDeductionPerPayCheck)</td>
+            <td>@Html.DisplayFor(m => m.DeductionCalcuationResult.EmployeeDeductionPerYear)</td>
+        </tr>
+        @if (Model.DeductionCalcuationResult.DependentsDeductionPerPayCheck > 0)
+        {
+            <tr>
+                <td>Dependents</td>
+                <td>@Html.DisplayFor(m => m.DeductionCalcuationResult.DependentsDeductionPerPayCheck)</td>
+                <td>@Html.DisplayFor(m => m.DeductionCalcuationResult.DependentsDeductionPerYear)</td>
+            </tr>
+        }
+        <tr>
+            <td>Total</td>
+            <td>@Html.DisplayFor(m => m.DeductionCalcuationResult.TotalDeductionPerPayCheck)</td>
+            <td>@Html.DisplayFor(m => m.DeductionCalcuationResult.TotalDeductionPerYear)</td>
+        </tr>
+    </tbody>
+</table>
+<h5>Employee yearly pay after deductions: @Html.DisplayFor(m => m.DeductionCalcuationResult.EmployeeYearlyPayAfterDeductions) </h5>
+<h5>Employee paycheck after deductions: @Html.DisplayFor(m => m.DeductionCalcuationResult.EmployeePaycheckAfterDeductions)</h5>
+

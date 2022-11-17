@@ -1,0 +1,49 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32210.238
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Paylocity.CodingExcercise.Web", "Paylocity.CodingExcercise\Paylocity.CodingExcercise.Web.csproj", "{399B6FDD-F7D7-4FB1-99B4-79F5DB8AD28F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Paylocity.CodingExcercise.Services", "Paylocity.CodingExcercise.Services\Paylocity.CodingExcercise.Services.csproj", "{AEFA2FC8-BCD1-4891-80B6-EF113FA0C04A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Paylocity.CodingExcercise.Data", "Paylocity.CodingExcercise.Data\Paylocity.CodingExcercise.Data.csproj", "{14BA88E2-F858-4541-8267-FFF3BF0785A8}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Paylocity.CodingExcercise.Core", "Paylocity.CodingExcercise.Core\Paylocity.CodingExcercise.Core.csproj", "{470344A5-5CAE-4AF0-91DB-C86BC2517674}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Paylocity.CodingExcercise.Tests", "Paylocity.CodingExcercise.Tests\Paylocity.CodingExcercise.Tests.csproj", "{3170267C-F721-4C6B-9075-015E25DEC46B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{399B6FDD-F7D7-4FB1-99B4-79F5DB8AD28F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{399B6FDD-F7D7-4FB1-99B4-79F5DB8AD28F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{399B6FDD-F7D7-4FB1-99B4-79F5DB8AD28F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{399B6FDD-F7D7-4FB1-99B4-79F5DB8AD28F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AEFA2FC8-BCD1-4891-80B6-EF113FA0C04A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AEFA2FC8-BCD1-4891-80B6-EF113FA0C04A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AEFA2FC8-BCD1-4891-80B6-EF113FA0C04A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AEFA2FC8-BCD1-4891-80B6-EF113FA0C04A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{14BA88E2-F858-4541-8267-FFF3BF0785A8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{14BA88E2-F858-4541-8267-FFF3BF0785A8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{14BA88E2-F858-4541-8267-FFF3BF0785A8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{14BA88E2-F858-4541-8267-FFF3BF0785A8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{470344A5-5CAE-4AF0-91DB-C86BC2517674}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{470344A5-5CAE-4AF0-91DB-C86BC2517674}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{470344A5-5CAE-4AF0-91DB-C86BC2517674}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{470344A5-5CAE-4AF0-91DB-C86BC2517674}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3170267C-F721-4C6B-9075-015E25DEC46B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3170267C-F721-4C6B-9075-015E25DEC46B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3170267C-F721-4C6B-9075-015E25DEC46B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3170267C-F721-4C6B-9075-015E25DEC46B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6C274984-EAD7-41AF-89AD-049ADD191232}
+	EndGlobalSection
+EndGlobal
