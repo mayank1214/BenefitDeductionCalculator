@@ -26,9 +26,9 @@ namespace Paylocity.CodingExcercise.Services.Services
 
         private decimal CalculateDeductionWithDiscount(Person person)
         {
-            var annualDeductionRate = _rateService.GetAnnualDeductionAmount(person.Type);
+            var annualDeductionAmount = _rateService.GetAnnualDeductionAmount(person.Type);
             var discountedRate = _rateService.GetDiscountRate(person);
-            return annualDeductionRate * (1 - discountedRate);
+            return annualDeductionAmount * (1 - discountedRate);
         }
 
         public DeductionCalculationResult CalculateDeductions(List<Person> persons, int NumberOfPayChecksPerYear, int Salary)

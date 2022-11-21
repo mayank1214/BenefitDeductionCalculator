@@ -6,10 +6,11 @@
 
 <div class="text-center">
     <h1>Employee Information</h1>
-    <p>Enter the employee's information below for employee benefit calculation</p>
 </div>
 <div>
+
     <form method="post">
+        <p>Enter the employee's information below for employee benefit calculation</p>
         <div class="row row-margin">
             <div class="col-2">
                 <label asp-for="EmployeeViewModel.Name">Name</label>
@@ -18,20 +19,20 @@
                 <input asp-for="EmployeeViewModel.Name" class="form-control" required />
             </div>
         </div>
-          <div class="row row-margin">
+        <div class="row row-margin">
             <div class="col-2">
-               <label asp-for="EmployeeViewModel.Salary">Yearly Salary</label>
+                <label asp-for="EmployeeViewModel.Salary">Yearly Salary</label>
             </div>
             <div class="col-2">
-                 <input asp-for="EmployeeViewModel.Salary" class="form-control" />
+                <input asp-for="EmployeeViewModel.Salary" class="form-control" />
             </div>
         </div>
-          <div class="row row-margin">
+        <div class="row row-margin">
             <div class="col-2">
                 <label asp-for="EmployeeViewModel.NumberOfPayChecksPerYear">Paycheck Per Year</label>
             </div>
             <div class="col-2">
-                 <input asp-for="EmployeeViewModel.NumberOfPayChecksPerYear" class="form-control" />
+                <input asp-for="EmployeeViewModel.NumberOfPayChecksPerYear" class="form-control" />
             </div>
         </div>
         @if (Model.EmployeeViewModel.Dependents.Count > 0)
@@ -43,25 +44,65 @@
                     <div class="col-2">
                         <label asp-for="EmployeeViewModel.Dependents[i].Name">Name</label>
                     </div>
-                     <div class="col-2">
+                    <div class="col-2">
                         <input asp-for="EmployeeViewModel.Dependents[i].Name" class="form-control" required />
                     </div>
-                     <div class="col-2">
+                    <div class="col-2">
                         <label asp-for="EmployeeViewModel.Dependents[i].DependentType">Type</label>
                     </div>
-                     <div class="col-2">
+                    <div class="col-2">
                         <select asp-for="EmployeeViewModel.Dependents[i].DependentType" asp-items="Model.DependentTypes" class="form-control"></select>
                     </div>
                 </div>
             }
         }
-        <hr />
+        <br />
         <div class="row row-margin">
-            <div class="form-group col-md-12 text-center">
+            <div class="form-group col-md-12">
                 <button type="submit" class="btn btn-primary btn-lg">Calculate Deductions</button>
             </div>
         </div>
     </form>
+    @if (Model.DeductionCalculationResult != null)
+    {
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Benefit Deduction Calculation Result</h5>               
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Deduction Per Paycheck</th>
+                            <th>Deduction Per Year</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Employee</td>
+                            <td>@Html.DisplayFor(m => m.DeductionCalculationResult.EmployeeDeductionPerPayCheck)</td>
+                            <td>@Html.DisplayFor(m => m.DeductionCalculationResult.EmployeeDeductionPerYear)</td>
+                        </tr>
+                        @if (Model.DeductionCalculationResult.DependentsDeductionPerPayCheck > 0)
+                        {
+                            <tr>
+                                <td>Dependents</td>
+                                <td>@Html.DisplayFor(m => m.DeductionCalculationResult.DependentsDeductionPerPayCheck)</td>
+                                <td>@Html.DisplayFor(m => m.DeductionCalculationResult.DependentsDeductionPerYear)</td>
+                            </tr>
+                        }
+                        <tr>
+                            <td>Total</td>
+                            <td>@Html.DisplayFor(m => m.DeductionCalculationResult.TotalDeductionPerPayCheck)</td>
+                            <td>@Html.DisplayFor(m => m.DeductionCalculationResult.TotalDeductionPerYear)</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <h5>Employee yearly pay after deductions: @Html.DisplayFor(m => m.DeductionCalculationResult.EmployeeYearlyPayAfterDeductions) </h5>
+                <h5>Employee paycheck after deductions: @Html.DisplayFor(m => m.DeductionCalculationResult.EmployeePaycheckAfterDeductions)</h5>
+
+            </div>
+        </div>
+    }
 </div>
 
 

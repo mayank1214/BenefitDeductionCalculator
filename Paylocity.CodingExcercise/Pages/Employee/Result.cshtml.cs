@@ -8,19 +8,19 @@ namespace Paylocity.CodingExcercise.Web.Pages.Employee
 {
     public class ResultModel : PageModel
     {
-        public DeductionCalculationResult DeductionCalcuationResult { get; set; }
+        public DeductionCalculationResult DeductionCalculationResult { get; set; }
 
 
         public IActionResult OnGet()
         {
-            DeductionCalcuationResult = TempData.Get<DeductionCalculationResult>("DeductionCalculationResult");
+            DeductionCalculationResult = TempData.Get<DeductionCalculationResult>("DeductionCalculationResult");
 
-            if (DeductionCalcuationResult == null)
+            if (DeductionCalculationResult == null)
             {
                 return RedirectToPage(PagesPath.INDEX);
             }
 
-            TempData.Set("DeductionCalculationResult", DeductionCalcuationResult);
+            TempData.Set("DeductionCalculationResult", DeductionCalculationResult);
 
             return Page();
         }

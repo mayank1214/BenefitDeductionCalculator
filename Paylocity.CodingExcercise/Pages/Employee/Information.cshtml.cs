@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Paylocity.CodingExcercise.Core.Constants;
 using Paylocity.CodingExcercise.Core.Enums;
 using Paylocity.CodingExcercise.Core.Interfaces;
+using Paylocity.CodingExcercise.Core.Models;
 using Paylocity.CodingExcercise.ViewModels;
 using Paylocity.CodingExcercise.Web.Extensions;
 using Paylocity.CodingExcercise.Web.Helpers;
@@ -16,6 +17,9 @@ namespace Paylocity.CodingExcercise.Web.Pages.Employee
         private readonly IDeductionCalculationService _deductionCalculationService;
         [BindProperty]
         public EmployeeViewModel EmployeeViewModel { get; set; }
+
+        public DeductionCalculationResult DeductionCalculationResult { get; set; }
+
         public List<SelectListItem> DependentTypes { get; } = new List<SelectListItem>();
 
         public InformationModel(IDeductionCalculationService deductionCalculationService)
@@ -48,9 +52,13 @@ namespace Paylocity.CodingExcercise.Web.Pages.Employee
             var result = _deductionCalculationService.CalculateDeductions(persons, EmployeeViewModel.NumberOfPayChecksPerYear, EmployeeViewModel.Salary);
 
             // set result to temp data to display on next page
-            TempData.Set("DeductionCalculationResult", result);
+            //TempData.Set("DeductionCalculationResult", result);
 
-            return RedirectToPage(PagesPath.RESULT);
+
+            //return RedirectToPage(PagesPath.RESULT);
+
+            DeductionCalculationResult = result;
+            return Page();
         }
 
         private void PoulateDependentTypes()
